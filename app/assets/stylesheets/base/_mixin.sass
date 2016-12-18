@@ -1,0 +1,119 @@
+// BEM - Modifier
+=vertical-center-for-one-line($height)
+  height: $height
+  line-height: $height
+
+=vertical-center
+  display: table-cell
+  vertical-align: middle
+
+=position($position, $top: null, $right: null, $bottom: null, $left: null)
+  bottom: $bottom
+  left: $left
+  position: $position
+  right: $right
+  top: $top
+
+=absolute($args...)
+  +position(absolute, $args...)
+
+=relative($args...)
+  +position(relative, $args...)
+
+=fixed($args...)
+  +position(fixed, $args...)
+
+=static
+  +position(static)
+
+=calc($property, $expression, $fallback: 100%)
+  #{$property}: $fallback
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+=link-colors($normal: $white_color, $hover: false, $active: false, $visited: false, $focus: false, $is_active: false)
+  color: $normal
+  @if $visited
+    &:visited
+      color: $visited
+  @if $focus
+    &:focus
+      color: $focus
+  @if $hover
+    &:hover
+      color: $hover
+  @if $active
+    &:active
+      color: $active
+  @if $is_active
+    &.active
+      color: $is_active
+
+=link-background-colors($normal: $white_color, $hover: false, $active: false, $visited: false, $focus: false, $is_active: false)
+  background-color: $normal
+  @if $visited
+    &:visited
+      background-color: $visited
+  @if $focus
+    &:focus
+      background-color: $focus
+  @if $hover
+    &:hover
+      background-color: $hover
+  @if $active
+    &:active
+      background-color: $active
+  @if $is_active
+    &.active
+      background-color: $is_active
+
+=vh-center($width: 100%, $min_height: false)
+  height: 100%
+  text-align: center
+  min-width: $width
+  @if $min_height
+    min-height: $min_height
+  &:before
+    content: ""
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+  & > *
+    display: inline-block
+    vertical-align: middle
+
+=triangle($direction: top, $color: $border_color, $size: 2px)
+  @if not index(top right bottom left, $direction)
+    @error "Direction must be either `top`, `right`, `bottom` or `left`."
+  width: 0
+  height: 0
+  content: ''
+  z-index: 10
+  border-#{opposite-position($direction)}: $size * 1.5 solid $color
+  $perpendicular-borders: $size solid transparent
+  @if $direction == top or $direction == bottom
+    border-left: $perpendicular-borders
+    border-right: $perpendicular-borders
+  @else if $direction == right or $direction == left
+    border-bottom: $perpendicular-borders
+    border-top: $perpendicular-borders
+
+
+// display: tableとその直下の要素にdisplay: table-cell, vertical-align: middleをかけて均等な余白を取る。主にPC用。
+=table-and-cell-padding($padding: $default_space * 3, $full_width: false, $last_align_right: false)
+  display: table
+  @if $full_width
+    width: 100%
+  > *
+    padding-right: $padding
+    &:last-child
+      padding-right: 0
+      @if $last_align_right
+        text-align: right
+    +vertical-center
+
+// 正方形
+=square($size)
+  height: $size
+  width: $size

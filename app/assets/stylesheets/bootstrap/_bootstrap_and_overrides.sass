@@ -1,0 +1,333 @@
+// //
+// // navbar
+// //
+//
+//
+// .navbar-default
+//   background-color: $white_color
+// 
+// //
+// // dropdown
+// //
+//
+// .dropdown-menu
+//   padding: 0
+//   z-index: 20
+//   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5)
+//   border-radius: 2px
+//   border: none
+//
+//   &:before,
+//   &:after
+//     +absolute($left: 80%)
+//   &:before
+//     top: -14px
+//     +triangle($color: rgba(0, 0, 0, 0.15), $size: 9px)
+//   &:after
+//     top: -13px
+//     +triangle($color: $white_color, $size: 9px)
+//   &--message
+//     &:before,
+//     &:after
+//       +absolute($left: 88%)
+//   &--right_justified
+//     left: initial
+//     right: 0
+//
+// .dropdown-menu > li > a.normal
+//   white-space: normal
+//
+//
+// //
+// // btn
+// //
+//
+//
+// .btn
+//   -webkit-appearance: none
+//   background: $btn_blue_normal
+//   border: none
+//   color: $white_color
+//   padding: ($default_space * 3 - 1px) $default_space * 5
+//   &:hover
+//     background: $btn_blue_hover
+//     color: $white_color
+//   &:active
+//     background: $btn_blue_active
+//     color: $white_color
+//   &:focus
+//     color: $white_color
+//   &:disabled
+//     opacity: 0.4
+//   &--white
+//     background: $btn_white_normal
+//     border: solid 1px $main_color
+//     color: $main_color
+//     &:hover
+//       background: $btn_white_hover
+//       color: $main_color
+//     &:active
+//       background: $btn_white_active
+//       color: $main_color
+//     &:focus
+//       color: $main_color
+//   &--red
+//     background: $btn_red_normal
+//     &:hover
+//       background: $btn_red_hover
+//     &:active
+//       background: $btn_red_active
+//   &--small
+//     border-radius: 3px
+//     padding: ($default_space * 2 - 2px) $default_space * 5
+//   &--full
+//     width: 100%
+//
+// input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="button"].btn-block, .btn-block
+//   display: inline-block
+//   width: $default_space * 27
+//   &--large
+//     font-size: $font_size_sub_heading
+//     width: $default_space * 71
+//
+// .btn-group
+//   > .btn
+//     margin-right: $default_space * 3
+//     &:last-child
+//       margin-right: 0
+//
+// .btn-main
+//   +link-colors($normal: $white_color, $hover: darken($white_color, 10%), $active: darken($white_color, 15%), $focus: darken($white_color, 10%))
+//   +link-background-colors($normal: $main_color, $hover: darken($main_color, 10%), $active: darken($main_color, 15%), $focus: darken($main_color, 10%))
+//
+// //
+// // panel
+// //
+//
+// .panel
+//   border-radius: 0
+//   z-index: 20
+//
+// .panel-insight
+//   border-radius: $default_space
+//   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12)
+//   border: 0.5px solid
+//   border-image-source: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0) 80%, rgba(0, 0, 0, 0.02) 95%, rgba(0, 0, 0, 0.04))
+//   border-image-slice: 1
+//   color: $main_color
+//   padding: $default_space * 6 $default_space * 8 $default_space * 8 $default_space * 8
+//
+//   .panel-heading
+//     font:
+//       size: $font_size_sub_heading
+//       weight: bold
+//     margin-bottom: $default_space * 6
+//     border: none
+//     padding: 0
+//   .panel-body
+//     padding: 0
+//   .pane
+//     padding: 0
+//
+//   .panel_content
+//     background: $bg_color
+//     margin-bottom: $default_space * 3
+//     padding: $default_space * 4
+//
+//   .form-group
+//     margin:
+//       left: 0
+//       right: 0
+//
+//   .panel-footer
+//     border: none
+//     background: inherit
+//     margin-top: $default_space * 6
+//     padding: 0
+//
+// //
+// // form-group
+// //
+//
+// .form-group
+//   &--small
+//     margin-bottom: $default_space * 2
+//   &--medium
+//     margin-bottom: $default_space * 6
+//   &--large
+//     margin-bottom: $default_space * 8
+//
+// //
+// // form-horizontal
+// //
+//
+// .form-horizontal
+//   .control-label
+//     &--left
+//       text-align: left
+//
+// .form-inline
+//   display: inline-block
+//
+// //
+// // input-group
+// //
+//
+// .input-group
+//   color: $main_color
+//   &--full
+//     width: 100%
+//   .form-control
+//     &:last-child
+//       border-radius: 0
+//
+// .form-control
+//   &--label
+//     display: inline-block
+//     margin-left: $default_space * 3
+//     +calc("width", "100% - #{ $default_space * 11 + 2 }")
+//
+// //
+// // table
+// //
+//
+// .table
+//   thead
+//     tr
+//       th
+//         border-bottom-color: $main_color
+//         word-break: break-all
+//       th + .space
+//         min-width: 10%
+//   tbody
+//     tr
+//       border-top: 1px solid $border_color
+//       &:last-child
+//         border-bottom: 1px solid $border_color
+//       td
+//         padding: $default_space * 5 $default_space * 3
+//         word-break: break-all
+//
+//   &--link
+//     tbody
+//       tr
+//         &:hover
+//           background: $btn_white_hover
+//         &:active
+//           background: $btn_white_active
+//
+// //
+// // tab
+// //
+//
+// .nav-tabs
+//   padding: 0 $default_space * 5
+//   li
+//     color: $sub_font_color02
+//   li.active
+//     a
+//       color: $main_color
+//       &:hover,
+//       &:focus
+//         color: $main_color
+//
+// //
+// // select-form
+// //
+//
+// .form-control
+//   &--thin
+//     height: $default_space * 6
+//
+// //
+// // row
+// //
+//
+// .row
+//   &--no_margin
+//     margin: 0
+//
+// //
+// // modal
+// //
+//
+// .modal-body
+//   padding: $default_space * 7 $default_space * 5
+//   min-height: 0
+//
+// .modal-backdrop
+//   background-color: black
+//
+// .modal-dialog
+//   &--center
+//     margin: $default_space * 32 + 2 auto
+//
+// .modal-header
+//   border-top-left-radius: $default_space
+//   border-top-right-radius: $default_space
+//   padding: $default_space * 4 $default_space * 5
+//   font:
+//     size: $font_size_cross_heading
+//     weight: bold
+//   +relative
+//   .close
+//     font:
+//       size: 40px
+//       weight: 300
+//     opacity: 1.0
+//     +absolute($top: $default_space * 1, $right: $default_space * 3)
+//
+//
+// .modal
+//   border-radius: $default_space
+//   margin-top: 10%
+//   &--red
+//     .modal-header
+//       background: $btn_red_normal
+//       color: $white_color
+//       .close
+//         color: $white_color
+//
+//
+// .pagination
+//   font-weight: bold
+//   .active > a
+//     background-color: $white_color
+//     border: 1px solid $border_color
+//     border-radius: 2px
+//     color: $sub_font_color02
+//     margin: $default_space
+//   > li > a
+//     background: $border_color
+//     border-radius: 2px
+//     margin: $default_space
+//     color: $sub_font_color02
+//     &:hover,
+//     &:focus
+//       color: $main_color
+//
+//
+// .list-group
+//   .list-group-item
+//     padding: $default_space * 5 $default_space * 5
+//     border-radius: 0
+//     &--no_side_line
+//       border:
+//         style: solid none
+//         width: 1px
+//         color: $border_color
+//     > a
+//       &:hover
+//         background: $gray_color
+//
+//
+// .breadcrumb
+//   background: inherit
+//   padding: 0
+//   margin-bottom: $default_space * 2
+//   > li + li:before
+//     color: $sub_font_color
+//     content: "> "
+//     padding: 0 5px
+//   > li > a
+//     color: $main_color

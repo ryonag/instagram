@@ -1,0 +1,95 @@
+// Layout base size
+$default_space: 4px
+$header_height: 50px
+$min_width: 960px
+$responsive_size: 768px
+$sidebar_width: $default_space * 60
+$closed_sidebar_width: $default_space * 14
+
+
+// Font size
+$font_size_large_heading: 48px
+$font_size_heading: 32px
+$font_size_cross_heading: 20px
+$font_size_sub_heading: 16px
+$font_size_default: 14px
+$font_size_small: 13px
+$font_size_micro: 12px
+
+// Colors
+// Font colors
+$sub_font_color: #737373
+$sub_font_color02: #ababab
+
+
+// Main colors
+$main_color: #2c3e50
+$gray_color: #828282
+$bg_color: #f6f6f6
+$white_color: #ffffff
+$border_color: #dcdcdc
+
+// Alert colors
+$danger_color: #ff0000
+
+// Sidebar colors
+$sidebar_normal: #1f2228
+$sidebar_active: #252f3b
+$sidebar_active02: #3a4552
+$sidebar_blue: #02b3f9
+$sidebar_gray: #8a979f
+$sidebar_border: #8f9091
+
+// Btn colors
+$btn_blue_normal: #43a2e5
+$btn_blue_hover: #3887c0
+$btn_blue_active: #2d6d9b
+
+$btn_white_normal: #ffffff
+$btn_white_hover: #e9ebed
+$btn_white_active: #d5d8dc
+
+$btn_red_normal: #ff6060
+$btn_red_hover: #e24f4f
+$btn_red_active: #cb4242
+
+// Alert colors
+$alert_blue01: #d9edf7
+$alert_blue02: #3a87ad
+$alert_blue03: #bce8f1
+$alert_red01: #f2dede
+$alert_red02: #b94a48
+$alert_red03: #eed3d7
+
+// Other colors
+$chart_blue: #26befa
+$chart_red: #ff6060
+$chart_orange: #fd9c65
+$chart_purple: #647ed3
+$chart_green: #65d364
+$img_blue: #1893ee
+$img_gray01: #71787d
+$img_gray02: #b9c1c5
+$img_gray02: #d8d8d8
+$img_pink: #fa0787
+
+
+*
+  &,
+  &:before,
+  &:after
+    +box-sizing(border-box)
+
+html,
+body
+  height: 100%
+  width: 100%
+
+body
+  background-color: $bg_color
+  color: $main_color
+  font-size: $font_size_default
+  line-height: 1.4
+  -webkit-font-smoothing: antialiased
+img
+  vertical-align: middle

@@ -1,0 +1,10 @@
+<h1>Instagram</h1>
+<div class="container">
+  <div class = "navbar-header">
+    <%= link_to 'instagram', root_path, class: 'navbar-brand' %>
+    <%= link_to '登録', new_user_registration_path, class: 'btn btn-primary' %>
+    <% if user_signed_in? %>
+      <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+    <% end %>
+  </div>
+</div>
