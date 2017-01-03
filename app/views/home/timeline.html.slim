@@ -1,0 +1,9 @@
+ログイン済み
+- if user_signed_in?
+  = link_to "ログアウト", destroy_user_session_path, method: :delete
+br
+- @photos.each do |photo|
+  tr
+    td = image_tag photo.image.url
+br
+= link_to "photo", new_photo_path

@@ -1,5 +1,5 @@
 h2
-  | Sign up
+  | メール
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
   .field
@@ -19,6 +19,9 @@ h2
     = f.label :password_confirmation
     br
     = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
+  .btn
+    = f.submit "次へ"
+br
+br
+= "すでにアカウントをお持ちですか？"
 = render "devise/shared/links"

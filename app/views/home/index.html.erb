@@ -1,8 +1,14 @@
-<h1>Instagram</h1>
+<div>
+  <%= image_tag 'logo_first.png', class: 'img' %>
+</div>
 <div class="container">
   <div class = "navbar-header">
-    <%= link_to 'instagram', root_path, class: 'navbar-brand' %>
-    <%= link_to '登録', new_user_registration_path, class: 'btn btn-primary' %>
+    <%= link_to 'Facebookでログイン', '', class: 'btn btn-primary' %><br>
+    <p>または</p><br>
+    <%= link_to 'メールアドレスで登録', new_user_registration_path, class: 'text_link' %><br>
+    <p>既にアカウントをお持ちですか？
+    <%= link_to 'ログイン', new_user_session_path, class: 'text_link' %>
+    </p>
     <% if user_signed_in? %>
       <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
     <% end %>

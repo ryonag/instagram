@@ -1,5 +1,4 @@
-<h2>Log in</h2>
-
+<%= image_tag 'logo_login'%>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -19,8 +18,14 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in" ,class: 'btn btn-primary' %>
   </div>
 <% end %>
+<br>
+<p>または</p>
 
-<%= render "devise/shared/links" %>
+<%= link_to 'Facebookでログイン', '', class: 'text_link' %><br>
+<br>
+<p>アカウントをお持ちでない場合
+  <%= link_to '登録はこちら', new_user_registration_path, class: 'text_link' %><br>
+</p>

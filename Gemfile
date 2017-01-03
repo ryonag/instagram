@@ -21,6 +21,10 @@ gem 'bootstrap-sass'
 # Use pry instead of irb in console
 gem 'pry-rails'
 
+gem 'pry-byebug'
+
+gem 'pry-stack_explorer'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
